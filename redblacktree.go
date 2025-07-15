@@ -136,7 +136,7 @@ func (rbt *RedBlackTree) fixInsert(node *RedBlackTreeNode) {
 			break
 		}
 
-		if parentNode == grandparentNode.left { // Linha 135
+		if parentNode == grandparentNode.left {
 			uncle := grandparentNode.right
 
 			if uncle != nil && isRed(uncle) {
