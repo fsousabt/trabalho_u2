@@ -68,7 +68,7 @@ func (rbt *RedBlackTree) printNode(node *RedBlackTreeNode, prefix string, isLeft
 }
 
 func (rbt *RedBlackTree) PrintTree() {
-	fmt.Println("------------ RED BLACK TREE ------------")
+	fmt.Println("--------------- RED BLACK TREE ---------------")
 	if rbt.root == nil || rbt.root.value == nil {
 		fmt.Println("Tree is empty.")
 		fmt.Println("----------------------------------------------")
@@ -132,7 +132,11 @@ func (rbt *RedBlackTree) fixInsert(node *RedBlackTreeNode) {
 	for parentNode != nil && isRed(parentNode) {
 		grandparentNode := parentNode.parent
 
-		if parentNode == grandparentNode.left {
+		if grandparentNode == nil {
+			break
+		}
+
+		if parentNode == grandparentNode.left { // Linha 135
 			uncle := grandparentNode.right
 
 			if uncle != nil && isRed(uncle) {

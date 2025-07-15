@@ -59,7 +59,7 @@ func (avl *AVL) printNode(node *AVLNode, prefix string, isLeft bool) {
 }
 
 func (avl *AVL) PrintTree() {
-	fmt.Println("------------ AVL TREE ------------")
+	fmt.Println("------------------ AVL TREE ------------------")
 	if avl.root == nil || avl.root.value == nil {
 		fmt.Println("Tree is empty.")
 		fmt.Println("----------------------------------------------")
